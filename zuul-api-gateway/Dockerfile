@@ -7,7 +7,8 @@ COPY . .
 RUN mvn install
 
 #jdk
-FROM openjdk:11.0.10-jre
+FROM openjdk:8-jdk-alpine #openjdk:11.0.10-jre
+MAINTAINER sharan
 WORKDIR /app
 COPY --from=build /app/target/zuul-0.0.1-SNAPSHOT.jar /app 
 
